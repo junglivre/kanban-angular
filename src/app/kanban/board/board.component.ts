@@ -6,6 +6,7 @@ interface Task {
   id: number;
   title: string;
   description: string;
+  longDescription?: string;
   status: 'todo' | 'doing' | 'done';
 }
 
@@ -18,9 +19,27 @@ interface Task {
 })
 export class BoardComponent {
   tasks: Task[] = [
-    { id: 1, title: 'Criar Layout', description: 'Desenvolver o layout do quadro Kanban', status: 'todo' },
-    { id: 2, title: 'Implementar Componentes', description: 'Criar os componentes necessários', status: 'doing' },
-    { id: 3, title: 'Testar Aplicação', description: 'Realizar testes básicos', status: 'done' }
+    {
+      id: 1,
+      title: 'Criar Layout',
+      description: 'Desenvolver o layout do quadro Kanban',
+      longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+      status: 'todo'
+    },
+    {
+      id: 2,
+      title: 'Implementar Componentes',
+      description: 'Criar os componentes necessários',
+      longDescription: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+      status: 'doing'
+    },
+    {
+      id: 3,
+      title: 'Testar Aplicação',
+      description: 'Realizar testes básicos',
+      longDescription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco...',
+      status: 'done'
+    }
   ];
 
   getTasks(status: 'todo' | 'doing' | 'done'): Task[] {
